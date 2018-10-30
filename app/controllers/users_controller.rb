@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
   def new
+    puts "je suis dans new"
+    @user = User.new
+    puts @user
   end
 
   def create
-    puts params
-    User.create(username:params['username'],email:params['email'],bio:params['bio'])
+     puts "jsuis dans le create"
+     user = params['user']
+     User.create(username:user['username'],email:user['email'],bio:user['bio'])
+
   end
 end
 

@@ -1,0 +1,31 @@
+<h1>User#new</h1>
+
+<!-- form_tag('/posts')
+<form action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  Ton Prénom : 
+  <input type="text" name="username"></br></br>
+  Ton email :
+  <input type="text" name="email"></br></br>
+  Une description:
+  <input type="text" name="bio"></br></br>
+  <input type="submit" value="Envoyer">
+</form>
+ -->
+
+  <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+  <%= label_tag 'User Name' %>
+  <%= text_field_tag 'username' %>
+  </br></br>
+
+  <%= label_tag 'Email' %>
+  <%= text_field_tag 'email' %>
+  </br></br>
+
+  <%= label_tag 'Description' %>
+  <%= text_field_tag 'bio' %>
+  </br></br>
+
+  <%= submit_tag "Create User" %>
+  <% end %>
